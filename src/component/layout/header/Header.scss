@@ -1,0 +1,28 @@
+$HEADER_HEIGHT: 100px;
+$TOP_BORDER_HEIGHT: 10px;
+$MARGIN_LEFT: 10px;
+
+.header-parent-container {
+    display: block;
+    width: 100%;
+    height: $HEADER_HEIGHT;
+    position: sticky;
+
+    .top-panel {
+        height: $TOP_BORDER_HEIGHT;
+        background-color: #145da0;
+    }
+
+    .bottom-panel {
+        height: calc(100% - #{$TOP_BORDER_HEIGHT});
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #e4e4e4;
+
+        .title {
+            margin-left: $MARGIN_LEFT;
+            font-size: 26px;
+            font-weight: 500;
+        }
+    }
+}
