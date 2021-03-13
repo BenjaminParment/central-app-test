@@ -1,8 +1,8 @@
-import { SET } from './input.types';
+import { SET } from "./input.types";
 
 const INITIAL_STATE = {
-    content: '',
-}
+    content: "",
+};
 
 const inputReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
@@ -14,7 +14,6 @@ const inputReducer = (state = INITIAL_STATE, action) => {
         default:
             return state;
     }
-}
-
+};
 
 export default inputReducer;
