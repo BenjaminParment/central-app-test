@@ -1,23 +1,33 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { removeCategory } from "../../redux/categories/categories.actions";
 import "./Category.scss";
 
+const mapStateToProps = (state) => ({
+    categories: state.categories.categories,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+    removeCategory: (category) => dispatch(removeCategory(category)),
+});
+
 class Category extends Component {
-    categories = [
-        {
-            name: "Benjamin Parment",
-            path: "Benjamin>Parment>Nicolas",
-        },
-        {
-            name: "Stephen Charlton",
-            path: "Stephen>Charlton>Leeds",
-        },
-    ];
+    constructor(props) {
+        super(props);
+        console.log(this.props.categories);
+    }
+
+    remove = (category) => {
+        this.props.removeCategory(category);
+    };
 
     renderSingleCategory = (category) => (
-        <tr className="row">
+        <tr className="row" key={category.id}>
             <td>{category.name}</td>
             <td>{category.path}</td>
-            <td>Delete</td>
+            {/* <td>
+                <button onClick={this.remove(category)}>Delete</button>
+            </td> */}
         </tr>
     );
 
@@ -26,16 +36,16 @@ class Category extends Component {
             <span className="title">Categories:</span>
             <table className="styled-table">
                 <thead>
-                    <tr>
+                    <tr key="header">
                         <th>Name</th>
                         <th>Path</th>
                         <th>Delete</th>
                     </tr>
                 </thead>
-                <tbody>{this.categories.map((x) => this.renderSingleCategory(x))}</tbody>
+                <tbody>{this.props.categories.map((x) => this.renderSingleCategory(x))}</tbody>
             </table>
         </div>
     );
 }
 
-export default Category;
+export default connect(mapStateToProps, mapDispatchToProps)(Category);
