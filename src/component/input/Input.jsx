@@ -2,17 +2,13 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { setInput } from "../../redux/input/input.actions";
 
-const mapStateToProps = (state) => {
-    return {
-        input: state.input.content,
-    };
-};
+const mapStateToProps = (state) => ({
+    input: state.input.content,
+});
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        set: (content) => dispatch(setInput(content)),
-    };
-};
+const mapDispatchToProps = (dispatch) => ({
+    set: (content) => dispatch(setInput(content)),
+});
 
 class Input extends Component {
     onChange = (e) => {
