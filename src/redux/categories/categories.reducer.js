@@ -25,7 +25,7 @@ const categoryReducer = (state = INITIAL_STATE, action) => {
         case REMOVE:
             return {
                 ...state,
-                categories: [...state.categories.filter((x) => x.id === action.payload.id)],
+                categories: [...state.categories.filter((x) => x.id !== action.payload.id)],
             };
         default:
             return state;

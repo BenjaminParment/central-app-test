@@ -25,9 +25,11 @@ class Category extends Component {
         <tr className="row" key={category.id}>
             <td>{category.name}</td>
             <td>{category.path}</td>
-            {/* <td>
-                <button onClick={this.remove(category)}>Delete</button>
-            </td> */}
+            <td>
+                <button className="delete" onClick={() => this.remove(category)}>
+                    x
+                </button>
+            </td>
         </tr>
     );
 

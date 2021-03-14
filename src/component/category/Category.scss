@@ -39,4 +39,10 @@
     .styled-table tbody tr:last-of-type {
         border-bottom: 2px solid #145da0;
     }
+
+    .delete {
+        border: none;
+        background-color: transparent;
+        width: 100%;
+    }
 }
