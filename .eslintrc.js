@@ -1,4 +1,5 @@
 module.exports = {
+    parser: "babel-eslint",
     extends: ["plugin:react/recommended", "plugin:prettier/recommended"],
     env: {
         es6: true,
@@ -22,6 +23,7 @@ module.exports = {
                 endOfLine: "auto",
             },
         ],
+        "arrow-body-style": ["error", "as-needed"],
     },
     settings: {
         react: {

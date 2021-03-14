@@ -4,3 +4,16 @@ body,
 #app > div {
     height: 100vh;
 }
+
+.input-category {
+    display: flex;
+    height: 100%;
+}
+
+.left-panel, .right-panel {
+    width: 50%;
+
+    &:not(.left-panel) {
+        border-left: 1px solid #e4e4e4;
+    }
+}
