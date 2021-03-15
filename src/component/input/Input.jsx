@@ -3,6 +3,7 @@ import debounce from "lodash/debounce";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { setResults } from "../../redux/results/results.actions";
+import "./Input.scss";
 
 const mapStateToProps = (state) => ({
     searchResults: state.searchResults,
@@ -37,7 +38,8 @@ class Input extends Component {
 
     render = () => (
         <div className="input-parent-container">
-            <input onChange={this.onChange}></input>
+            <span className="title">Search:</span>
+            <input onChange={this.onChange} className="input"></input>
         </div>
     );
 }
