@@ -4,7 +4,7 @@ import { removeCategory } from "../../redux/categories/categories.actions";
 import "./Category.scss";
 
 const mapStateToProps = (state) => ({
-    categories: state.categories.categories,
+    categories: state.categories,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -12,11 +12,6 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 class Category extends Component {
-    constructor(props) {
-        super(props);
-        console.log(this.props.categories);
-    }
-
     remove = (category) => {
         this.props.removeCategory(category);
     };
