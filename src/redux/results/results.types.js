@@ -1,1 +1,1 @@
-export const SET = "set";
+export const SET_RESULTS = "set_results";
