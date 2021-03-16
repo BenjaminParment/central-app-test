@@ -15,6 +15,18 @@
         font-family: sans-serif;
         width: 500px;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+        .name {
+            width: 178px;
+        }
+
+        .path {
+            width: 248px;
+        }
+
+        .delete {
+            width: 74px;
+        }
     }
 
     .styled-table thead tr {
