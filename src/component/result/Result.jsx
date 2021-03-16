@@ -28,7 +28,7 @@ class Result extends Component {
             {this.props.displayResults ? (
                 this.props.currentResults.map((x) => this.renderSingleRes(x))
             ) : (
-                <span className="no-result">Search for result</span>
+                <span className="no-result">No result to display</span>
             )}
         </div>
     );

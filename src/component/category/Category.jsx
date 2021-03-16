@@ -34,9 +34,9 @@ class Category extends Component {
             <table className="styled-table">
                 <thead>
                     <tr key="header">
-                        <th>Name</th>
-                        <th>Path</th>
-                        <th>Delete</th>
+                        <th className="name">Name</th>
+                        <th className="path">Path</th>
+                        <th className="delete">Delete</th>
                     </tr>
                 </thead>
                 <tbody>{this.props.categories.map((x) => this.renderSingleCategory(x))}</tbody>
