@@ -17,15 +17,15 @@
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 
         .name {
-            width: 178px;
+            min-width: 178px;
         }
 
         .path {
-            width: 248px;
+            min-width: 248px;
         }
 
         .delete {
-            width: 74px;
+            min-width: 74px;
         }
     }
 
@@ -36,18 +36,18 @@
     }
 
     .styled-table th,
-        .styled-table td {
-            padding: 12px 15px;
+    .styled-table td {
+        padding: 12px 15px;
     }
 
     .styled-table tbody tr {
         border-bottom: 1px solid #dddddd;
     }
-    
+
     .styled-table tbody tr:nth-of-type(even) {
         background-color: #f3f3f3;
     }
-    
+
     .styled-table tbody tr:last-of-type {
         border-bottom: 2px solid #145da0;
     }
@@ -56,5 +56,9 @@
         border: none;
         background-color: transparent;
         width: 100%;
+    }
+
+    .no-categories {
+        text-align: center;
     }
 }

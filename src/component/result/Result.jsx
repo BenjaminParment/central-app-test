@@ -4,8 +4,10 @@ import { addCategory } from "../../redux/categories/categories.actions";
 import "./Result.scss";
 
 const mapStateToProps = (state) => ({
-    currentResults: state.searchResults.currentResults,
+    currentResults: state.searchResults.results,
     displayResults: state.displayResults.show,
+    loadingResults: state.loadingResults.loading,
+    categories: state.categories,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -14,10 +16,19 @@ const mapDispatchToProps = (dispatch) => ({
 
 class Result extends Component {
     renderSingleRes = (res) => (
-        <button key={res.id} className="result" onClick={() => this.onClick(res)}>
+        <button
+            key={res.id}
+            className="result"
+            onClick={() => this.onClick(res)}
+            disabled={this.props.categories.some((x) => x.id === res.id)}
+        >
             {res.name}
         </button>
     );
+
+    isDisabled = (id) => {
+        this.props.currentResults.some((x) => x.id === id);
+    };
 
     onClick = (res) => {
         this.props.addCategory({ name: res.name, path: res.path, id: res.id });
@@ -25,10 +36,12 @@ class Result extends Component {
 
     render = () => (
         <div className="result-parent-container">
-            {this.props.displayResults ? (
+            {this.props.displayResults && this.props.currentResults.length > 0 ? (
                 this.props.currentResults.map((x) => this.renderSingleRes(x))
             ) : (
-                <span className="no-result">No result to display</span>
+                <span className="no-result">
+                    {this.props.loadingResults ? "Loading..." : "No result to display"}
+                </span>
             )}
         </div>
     );
