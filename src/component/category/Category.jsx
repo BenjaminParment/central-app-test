@@ -39,7 +39,15 @@ class Category extends Component {
                         <th className="delete">Delete</th>
                     </tr>
                 </thead>
-                <tbody>{this.props.categories.map((x) => this.renderSingleCategory(x))}</tbody>
+                <tbody>
+                    {this.props.categories.length > 0 ? (
+                        this.props.categories.map((x) => this.renderSingleCategory(x))
+                    ) : (
+                        <td colSpan="3" className="row no-categories">
+                            No categories to display
+                        </td>
+                    )}
+                </tbody>
             </table>
         </div>
     );

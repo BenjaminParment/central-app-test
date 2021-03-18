@@ -1,17 +1,6 @@
 import { ADD, REMOVE } from "./categories.types";
 
-const INITIAL_STATE = [
-    {
-        name: "Benjamin Parment",
-        path: "Benjamin>Parment>Nicolas",
-        id: 1,
-    },
-    {
-        name: "Stephen Charlton",
-        path: "Stephen>Charlton>Leeds",
-        id: 2,
-    },
-];
+const INITIAL_STATE = [];
 
 const categoryReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
